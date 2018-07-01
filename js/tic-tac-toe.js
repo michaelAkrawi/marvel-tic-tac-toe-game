@@ -40,7 +40,8 @@ var game = {
     checkWinner: function (cell) {
 
         if (game.checkVertical(cell) ||
-            game.checkHorizontal(cell) ||
+            game.checkHorizontal(cell) || 
+            game.checkSlant())
 
             window.alert('winner');
 
@@ -80,36 +81,47 @@ var game = {
         return true;
     },
 
-    checkSlant: function (cell) {
+    checkSlant: function () {
+
+       return game.leftSlantWinner() || game.rightSlantWinner();
+            
+    },
+
+    leftSlantWinner : function(){
+            let winner = true;
+            const rows = $('tr');
+            for(let j = rows.length - 1 ;  j >= 0; j --){
+                let c   = $(rows[j]).children().eq(j);
+                if(!game.hasAtrr(c)){
+                        winner = false;
+                        break;
+                }
+    
+            }
+            
+            return winner;
+    
+    },
+
+    rightSlantWinner : function(){
 
         let winner = true;
-        const index = $(cell).index();
-        const rowIndex = $(cell).parent().index();
-        const arr = [0, 1, 2];
-
-        //check right slant
         const rows = $('tr');
-        for (j = 0; j < rows.length > j++;) {
-
-            if (j == 1) {
-
+        for(let j = 0;  j < rows.length; j ++){
+            let c   = $(rows[j]).children().eq(j);
+            if(!game.hasAtrr(c)){
+                    winner = false;
+                    break;
             }
-            else {
-
-            }
-
-            let f = rows[j].children().eq(arr[j]);
-            let l = rows[j].children.eq(arr.length - j - 1);
-
-            if ($(c).attr('player') == undefined || $(c).attr('player') != game.turn) {
-
-            }
-
-            let first = rows[j].children().eq(j);
-            let last = rows[j].children().eq(rows.lenght - 1);
 
         }
+        
+        return winner;
 
+    },
+
+    hasAtrr : function(cell){
+        return ($(cell).attr('player') == undefined || $(cell).attr('player') != game.turn);
     },
 
     changePlayerTurn: function () {
