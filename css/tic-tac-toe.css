@@ -24,23 +24,6 @@
     background-color: #fff;
 }
 
-.thumb-box {
-    border-style: none;
-    border-image: none;
-    border-bottom-left-radius: 150px;
-    border-bottom-right-radius: 150px;
-    position: relative;
-    max-width: 240px;
-}
-
-    .thumb-box::before {
-        border: solid 3px #BABABA;
-        background: #222;
-    }
-
-    .thumb-box:after {
-        border-bottom: solid 3px #BABABA;
-    }
 
 a {
     cursor: pointer;
@@ -54,17 +37,18 @@ a {
     animation-fill-mode: forwards;
 }
 
-table{
+table {
     width: 80%;
     min-height: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-td{
+td {
     cursor: pointer;
     text-align: center;
     width: 33%;
+    height: 33%;
 }
 
 
@@ -75,38 +59,16 @@ table tbody tr:nth-child(2) {
 }
 
 table tbody tr td:nth-child(2),
-table tbody tr td:nth-child(3){
-  border-left: 2px solid #222;
+table tbody tr td:nth-child(3) {
+    border-left: 2px solid #222;
 }
 
-table tbody tr td img{
- width: 25%;
+table tbody tr td img {
+    width: 35%;
 }
 
 
 
-
-
-#board-game {
-    margin-top: 100px;
-    margin-bottom: 15px;
-}
-
-    #board-game .board-row div {
-        display: inline-block;
-        border-left: 1px solid #333;
-        padding: 15px;
-        width: 27%;
-        min-height: 200px !important;
-    }
-
-    #board-game .board-row:first-child div {
-        border-bottom: 1px solid #333;
-    }
-
-    #board-game .board-row:nth-child(2) div {
-        border-bottom: 1px solid #333;
-    }
 
 
 @keyframes popout {
