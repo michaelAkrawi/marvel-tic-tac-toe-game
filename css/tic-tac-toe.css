@@ -68,6 +68,28 @@ table tbody tr td img {
 }
 
 
+#message {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+
+
+#btn-reset {
+    text-transform: capitalize;
+    color: #fff;
+    box-shadow: 0 7px 0 #a0050b;
+    min-height: 40px;
+    min-width: 75px;
+    background-color: #ed1a29;
+    border:none;
+    font-size: 24px;
+    outline:none;
+    font-weight: 600;
+}
+
+
 
 
 
