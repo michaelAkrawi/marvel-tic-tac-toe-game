@@ -20,6 +20,19 @@
 </head>
 <body>
     <div class="container main">
+        <div id="skins-selection" class="text-center">
+            <span>
+                <a id="marvel-skin">
+                    <img src="images/marvel_logo.png" />
+                </a>
+            </span>
+            <span>
+                <a id="disney-skin">
+                    <img src="images/disney_logo.png" />
+                </a>
+            </span>
+        </div>
+
 
         <div id="charchters-selection" class="text-center">
             <div>
@@ -27,7 +40,7 @@
                     Player 1
                 </h1>
                 <a>
-                    <img src="images/usa_spider-man.png" title="spider man" />
+                    <img id="img-player1" />
                 </a>
             </div>
             <div>
@@ -35,7 +48,7 @@
                     Player 2
                 </h1>
                 <a>
-                    <img src="images/captain_america.png" title="captain america" />
+                    <img id="img-player2" />
                 </a>
             </div>
         </div>
@@ -68,6 +81,9 @@
     <div class="modal fade" id="winner" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Congratulations</h5>
+                </div>
                 <div class="modal-body">
                     <p id="message">
                     </p>
@@ -78,6 +94,21 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="text-center">
+            <p>
+                © 2018 MARVEL,  © 2018 DISNEY
+            </p>
+            <p>
+               
+            </p>
+            <p>
+                All resources for this site produced by those vendors.
+            </p>
+
+        </div>
+    </footer>
 
 
 

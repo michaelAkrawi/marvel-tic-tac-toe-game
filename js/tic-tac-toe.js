@@ -1,6 +1,13 @@
 var skin = {
     marvel: {
-        icons: ['images/spiderman_web.png', 'images/captain-america_shield .png'],
+        icons: ['images/spiderman_web.png', 'images/captain-america_shield.png'],
+        background: 'images/avengers_pattern_blue.jpg',
+        images: ['images/usa_spider-man.png', 'images/captain_america.png']
+    },
+    disney: {
+        icons: ['images/vampire_bat.png', 'images/elena_migs.jpeg'],
+        background: 'images/disney_background.jpg',
+        images: ['images/vampirina_disneyjunior.png', 'images/elenaofavalor_disneyjunior.png']
     }
 }
 
@@ -12,9 +19,20 @@ var game = {
     turn: 'player1',
 
     setup: function () {
+
+        game.loadSkin();
         game.bindEvents();
+
     },
 
+    loadSkin: function () {
+
+        $('body').css('background-image', `url('${game.skin.background}'`);
+        $('#img-player1').attr('src', game.skin.images[0]);
+        $('#img-player2').attr('src', game.skin.images[1]);
+    },
+
+    
     bindEvents: function () {
 
         let $cells = $('td');
@@ -41,6 +59,16 @@ var game = {
             game.resetGame();
         });
 
+        $("#marvel-skin").click(function () {
+            game.skin = skin.marvel;
+            game.loadSkin();
+        });
+
+        $("#disney-skin").click(function () {
+            game.skin = skin.disney;
+            game.loadSkin();
+        });
+
     },
 
     checkWinner: function (cell) {
@@ -52,19 +80,19 @@ var game = {
             game.showWinnerMessage();
         else if (game.checkDraw())
             game.showDrawMessage();
-        
-           
+
+
 
     },
 
     checkDraw: function () {
 
-        let draw = true;            
+        let draw = true;
         let $cells = $('td');
 
         $cells.each(function () {
             if ($(this).is(':empty'))
-                draw = false;                    
+                draw = false;
 
         });
 
