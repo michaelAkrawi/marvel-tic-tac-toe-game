@@ -1,5 +1,5 @@
 ﻿body {
-    font-family: 'Marvel', sans-serif;
+    font-family: 'Marvel', sans-serif;   
 }
 
 .container {
@@ -64,7 +64,7 @@ table tbody tr td:nth-child(3) {
 }
 
 table tbody tr td img {
-    width: 35%;
+    width: 50%;
 }
 
 
